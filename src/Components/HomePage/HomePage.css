@@ -1,0 +1,24 @@
+#homePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 50px);
+    width: 100vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url('https://www.fashiongonerogue.com/wp-content/uploads/2021/07/Goth-Style-Inspiration-Women-Fashion-800x533.jpg');
+    background-size: cover;
+    background-position: 50% 45%;
+    background-repeat: no-repeat;
+    color: white;
+    margin-top: 50px;
+}
+
+#homePage h1 {
+    font-size: 4.2rem;
+    margin-top: 30vh;
+    margin-bottom: 10px;
+}
+
+#homePage button {
+    padding: 12px;
+}
