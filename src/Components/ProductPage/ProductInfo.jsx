@@ -7,7 +7,11 @@ function ProductInfo({product}) {
     const [amount, setAmount] = useState(1);
 
     const handleAmount = (e) => {
-        setAmount(e.target.value);
+        let updatedValue = parseInt(e.target.value);
+        if(isNaN(updatedValue)) {
+            updatedValue = 1;
+        }
+        setAmount(updatedValue);
     }
 
     const handleAmountBtnInc = () => {

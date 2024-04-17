@@ -30,7 +30,7 @@ export const CartProvider = ({ children }) => {
             const updatedCartItems = [...cartItems];
               updatedCartItems[updateItemIndex] = {
             ...updatedCartItems[updateItemIndex],
-            amount: updateItem.amount + updateAmount
+            amount: updateItem.amount + parseInt(updateAmount)
         };
         setCartItems(updatedCartItems);
         } else {
