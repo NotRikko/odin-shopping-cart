@@ -44,6 +44,13 @@ export const CartProvider = ({ children }) => {
         }
     }
 
+    const removeCartItem = (index) => {
+        console.log(index);
+        const updatedCartItems = [...cartItems];
+        updatedCartItems.splice(index, 1);
+        setCartItems(updatedCartItems)
+    }
+
     const handleItemAmount = (index, newAmount) => {
         if(isNaN(newAmount)) {
             newAmount = 1;
@@ -56,7 +63,7 @@ export const CartProvider = ({ children }) => {
         setCartItems(updatedCartItems);
     };
     return (
-        <CartContext.Provider value={{ cartItems, totalCost, addCartItem, handleItemAmount }}>
+        <CartContext.Provider value={{ cartItems, totalCost, addCartItem, removeCartItem, handleItemAmount }}>
           {children}
         </CartContext.Provider>
       );

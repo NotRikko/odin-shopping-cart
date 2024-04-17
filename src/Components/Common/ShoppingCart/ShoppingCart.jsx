@@ -6,7 +6,7 @@ import { useCart } from '../../../CartProvider'
 import { useEffect, useRef } from 'react'
 
 function ShoppingCart ({ toggleCart, clickOut }) {    
-    const {cartItems, handleItemAmount, totalCost} = useCart();
+    const {cartItems, handleItemAmount, removeCartItem, totalCost} = useCart();
     const cartRef = useRef(null);
 
     useEffect(() => {
@@ -36,7 +36,8 @@ function ShoppingCart ({ toggleCart, clickOut }) {
                         <CartItem
                             key={index}
                             product={item}
-                            changeAmount={(e) => handleItemAmount(index, parseInt((e.target.value)))} />
+                            changeAmount={(e) => handleItemAmount(index, parseInt((e.target.value)))}
+                            deleteItem={() => removeCartItem(index) } />
                     )
                 })}
 

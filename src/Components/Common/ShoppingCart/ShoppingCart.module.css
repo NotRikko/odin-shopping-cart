@@ -70,21 +70,36 @@
     font-size: 1.2rem;
 }
 
+.cartItemBottom {
+    display: flex;
+    gap: 25px
+
+}
+
+.removeBtn {
+    font-size: 0.7rem;
+    border: none;
+    text-decoration: underline;
+    background-color: white;
+}
+
 .cartQuantity {
     display: flex;
     border: 1px solid black;
 }
 
+
 .cartQuantity input {
-    width: 50px;
+    width: 30px;
     border: none;
     text-align: center;
 }
 
 .cartQuantity button {
-    padding: 10px;
+    padding: 10px 15px 10px;
     border: none;
 }
+
 
 #cartCheckout {
     margin-top: auto;
@@ -106,5 +121,6 @@
     width: 100%;
     background-color: black;
 }
+
 
 
