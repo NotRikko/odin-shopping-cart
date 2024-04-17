@@ -1,6 +1,6 @@
-import NavBar from '../Common/NavBar'
+import Overlay from '../Common/Overlay'
 import {useState} from 'react'
-import './Products.css'
+import ProductsStyle from './Products.module.css'
 
 function ProductInfo({product}) {
     const [amount, setAmount] = useState(1);
@@ -18,18 +18,19 @@ function ProductInfo({product}) {
     }
    
     return (
-        <div className="productPage">
-            <NavBar />
-            <div className='productContainer'>
+        <>
+            <Overlay />
+            <div className={ProductsStyle.productPage}>
+            <div className={ProductsStyle.productContainer}>
                 <img src={product.image}></img>
-                <div className='productInfo'>
-                    <div className='productText'> 
+                <div className={ProductsStyle.productInfo}>
+                    <div className={ProductsStyle.productText}> 
                         <h1>{product.title}</h1>
                         <h2>${product.price}</h2>
                         <p>{product.description}</p>
                     </div>
-                    <div className='productCheckout'>
-                        <div className='quantity'>
+                    <div className={ProductsStyle.productCheckout}>
+                        <div className={ProductsStyle.quantity}>
                             <button onClick={handleAmountBtnDec}></button>
                             <input type="text" value={amount} onChange={handleAmount}/>
                             <button onClick={handleAmountBtnInc}></button>
@@ -39,6 +40,8 @@ function ProductInfo({product}) {
                 </div>
             </div>
         </div>
+        </>
+        
     )
 }
 

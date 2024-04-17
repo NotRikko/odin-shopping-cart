@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import NavBar from '../Common/NavBar'
+import Overlay from '../Common/Overlay'
 import ProductCard from './ProductCard'
 import ProductInfo from './ProductInfo'
-import ShoppingCart from '../ShoppingCart/ShoppingCart'
-import './Products.css'
+import ProductsStyle from './Products.module.css'
 
 function ProductPage() {
     const [products, setProducts] = useState([]); 
@@ -34,21 +33,19 @@ function ProductPage() {
     useEffect(() => {
         const productToDisplay = products.find((p) => p.title === decodeURIComponent(productID))
         setDisplayProduct(productToDisplay);
-        console.log(productID);
     },[productID, products]);
 
     
     
     return (
         <>
+        <Overlay />
         {productID && displayProduct? (
             <ProductInfo product = {displayProduct} />
             ) : (
-            <div id='productPage'>
-                <NavBar />
-                <ShoppingCart />
+            <div id={ProductsStyle.productPage}>
                 <h1>Products</h1>
-                <div id='products'>
+                <div id={ProductsStyle.products}>
                     {products.map((product, index) => (
                         <Link 
                             key={index}

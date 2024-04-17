@@ -56,10 +56,30 @@
 .cartItemInfo {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
+    gap: 10px;
     width: 200px;
+}
+
+.cartItemInfo h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.cartQuantity {
+    display: flex;
+    border: 1px solid black;
 }
 
 .cartQuantity input {
     width: 50px;
+    border: none;
+    text-align: center;
 }
+
+.cartQuantity button {
+    padding: 10px;
+    border: none;
+}
+

@@ -4,19 +4,19 @@ import HomeIcon from '@mui/icons-material/Home';
 import StoreIcon from '@mui/icons-material/Store';
 import './NavBar.css'
 
-function NavBar() {
+function NavBar({toggleCart}) {
     return (
         <nav>
             <h3>Umbral</h3>
             <ul>
                 <li>
-                 <NavLink exact to='/'><HomeIcon/></NavLink>
+                    <NavLink exact to='/'><HomeIcon/></NavLink>
                 </li>
                 <li>
-                 <NavLink exact to='/products'><StoreIcon/></NavLink>
+                    <NavLink exact to='/products'><StoreIcon/></NavLink>
                 </li>
                 <li>
-                 <NavLink><ShoppingBagIcon/></NavLink>
+                    <ShoppingBagIcon onClick={toggleCart} />
                 </li>
             </ul>
         </nav>
