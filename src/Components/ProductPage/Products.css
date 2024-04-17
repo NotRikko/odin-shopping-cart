@@ -13,7 +13,7 @@
 #products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    column-gap: 20px;
+    column-gap: 50px;
     row-gap: 50px;
     margin: 4vh 8vw 4vh;
 }
@@ -97,11 +97,12 @@
     .productContainer {
         flex-direction: column;
         gap: 10vh;
+        margin-bottom: 5vh;
     }
 
     .productContainer img {
-        width: 350px;
-        height: 350px;
+        width: 325px;
+        height: 325px;
     }
 }
 

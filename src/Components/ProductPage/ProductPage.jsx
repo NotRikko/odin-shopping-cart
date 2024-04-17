@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import NavBar from '../Common/NavBar'
 import ProductCard from './ProductCard'
 import ProductInfo from './ProductInfo'
+import ShoppingCart from '../ShoppingCart/ShoppingCart'
 import './Products.css'
 
 function ProductPage() {
@@ -45,6 +46,7 @@ function ProductPage() {
             ) : (
             <div id='productPage'>
                 <NavBar />
+                <ShoppingCart />
                 <h1>Products</h1>
                 <div id='products'>
                     {products.map((product, index) => (
