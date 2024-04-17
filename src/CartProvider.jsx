@@ -23,16 +23,21 @@ export const CartProvider = ({ children }) => {
         return total + (item.cost * item.amount);
     }, 0);
 
-    const addCartItem = (product, amount) => {
+    const addCartItem = (product, updateAmount) => {
         if(cartItems.find(cartItem => cartItem.name === product.title)) {
             const updateItem = cartItems.find(cartItem => cartItem.name === product.title);
-            updateItem.amount = updateItem.amount + amount;
-            console.log(updateItem)
+            const updateItemIndex = cartItems.indexOf(updateItem);
+            const updatedCartItems = [...cartItems];
+              updatedCartItems[updateItemIndex] = {
+            ...updatedCartItems[updateItemIndex],
+            amount: updateItem.amount + updateAmount
+        };
+        setCartItems(updatedCartItems);
         } else {
             const newCartItem = {
                 name: product.title,
                 cost: product.price,
-                amount: amount,
+                amount: updateAmount,
                 image: product.image
             }
             setCartItems(prevCartItems => [...prevCartItems, newCartItem])
