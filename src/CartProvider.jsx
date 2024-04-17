@@ -1,5 +1,6 @@
 import {createContext, useState, useContext} from 'react'
 
+
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
@@ -18,21 +19,30 @@ export const CartProvider = ({ children }) => {
         }
     ])
     
+    const totalCost = cartItems.reduce((total, item) => {
+        return total + (item.cost * item.amount);
+    }, 0);
+
     const addCartItem = (product, amount) => {
-        const newCartItem = {
-            name: product.title,
-            cost: product.price,
-            amount: amount,
-            image: product.image
+        if(cartItems.find(cartItem => cartItem.name === product.title)) {
+            const updateItem = cartItems.find(cartItem => cartItem.name === product.title);
+            updateItem.amount = updateItem.amount + amount;
+            console.log(updateItem)
+        } else {
+            const newCartItem = {
+                name: product.title,
+                cost: product.price,
+                amount: amount,
+                image: product.image
+            }
+            setCartItems(prevCartItems => [...prevCartItems, newCartItem])
         }
-        setCartItems(prevCartItems => [...prevCartItems, newCartItem])
     }
 
     const handleItemAmount = (index, newAmount) => {
         if(isNaN(newAmount)) {
             newAmount = 1;
         }
-        console.log(newAmount)
         const updatedCartItems = [...cartItems];
         updatedCartItems[index] = {
             ...updatedCartItems[index],
@@ -41,7 +51,7 @@ export const CartProvider = ({ children }) => {
         setCartItems(updatedCartItems);
     };
     return (
-        <CartContext.Provider value={{ cartItems, addCartItem, handleItemAmount }}>
+        <CartContext.Provider value={{ cartItems, totalCost, addCartItem, handleItemAmount }}>
           {children}
         </CartContext.Provider>
       );

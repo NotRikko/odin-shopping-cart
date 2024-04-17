@@ -8,10 +8,14 @@ function Overlay() {
     const toggleCart = () => {
         setCartOpen(!cartOpen)
     }
+
+    const clickOutCart = () => {
+        setCartOpen(false);
+    }
     return(
         <>
             <NavBar toggleCart={toggleCart} />
-            {cartOpen && <ShoppingCart toggleCart={toggleCart} />}
+            {cartOpen && <ShoppingCart toggleCart={toggleCart} clickOut={clickOutCart} />}
         </>
     )
 }
