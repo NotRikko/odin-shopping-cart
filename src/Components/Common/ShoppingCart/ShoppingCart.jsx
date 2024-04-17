@@ -22,7 +22,7 @@ function ShoppingCart ({ toggleCart, clickOut }) {
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
-    }, []);
+    },);
  
 
     return (
