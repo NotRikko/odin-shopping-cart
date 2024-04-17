@@ -1,7 +1,8 @@
-import Overlay from '../Common/Overlay'
 import {useState} from 'react'
-import ProductsStyle from './Products.module.css'
 import {useCart} from '../../CartProvider'
+import {PropTypes} from 'prop-types'
+import Overlay from '../Common/Overlay'
+import ProductsStyle from './Products.module.css'
 
 function ProductInfo({product}) {
     const [amount, setAmount] = useState(1);
@@ -52,4 +53,10 @@ function ProductInfo({product}) {
     )
 }
 
+ProductInfo.propTypes = {
+    product: PropTypes.object,
+}
+
+
 export default ProductInfo
+

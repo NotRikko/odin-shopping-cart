@@ -1,5 +1,6 @@
 import {NavLink} from 'react-router-dom'
 import {useCart} from '../../CartProvider'
+import {PropTypes} from 'prop-types'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import HomeIcon from '@mui/icons-material/Home';
 import StoreIcon from '@mui/icons-material/Store';
@@ -25,5 +26,11 @@ function NavBar({toggleCart}) {
         </nav>
     )
 }
+
+NavBar.propTypes = {
+    toggleCart: PropTypes.function,
+}
+
+
 
 export default NavBar

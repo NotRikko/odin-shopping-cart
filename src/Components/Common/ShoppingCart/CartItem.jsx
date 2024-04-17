@@ -1,3 +1,4 @@
+import {PropTypes} from 'prop-types'
 import shoppingStyles from './ShoppingCart.module.css'
 
 
@@ -20,5 +21,12 @@ function CartItem({product, changeAmount, deleteItem}) {
                 </div>
     )
 }
+
+CartItem.propTypes = {
+    product: PropTypes.object,
+    changeAmount: PropTypes.function,
+    deleteItem: PropTypes.function,
+}
+
 
 export default CartItem

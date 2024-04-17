@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import CircleRoundedIcon from '@mui/icons-material/CircleRounded';
 import { useCart } from '../../../CartProvider'
 import { useEffect, useRef } from 'react'
+import {PropTypes} from 'prop-types'
 
 function ShoppingCart ({ toggleCart, clickOut }) {    
     const {cartItems, handleItemAmount, removeCartItem, totalCost} = useCart();
@@ -48,6 +49,11 @@ function ShoppingCart ({ toggleCart, clickOut }) {
             </div>
         </div>
     )
+}
+
+ShoppingCart.propTypes = {
+    toggleCart: PropTypes.function,
+    clickOut: PropTypes.function,
 }
 
 export default ShoppingCart
