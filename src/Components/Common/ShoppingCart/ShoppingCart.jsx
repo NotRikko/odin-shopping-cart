@@ -5,6 +5,7 @@ import CircleRoundedIcon from '@mui/icons-material/CircleRounded';
 import { useCart } from '../../../CartProvider'
 import { useEffect, useRef } from 'react'
 import {PropTypes} from 'prop-types'
+import {Link} from 'react-router-dom'
 
 function ShoppingCart ({ toggleCart, clickOut }) {    
     const {cartItems, handleItemAmount, removeCartItem, totalCost} = useCart();
@@ -45,7 +46,12 @@ function ShoppingCart ({ toggleCart, clickOut }) {
             </div>
             <div id={shoppingStyles.cartCheckout}>
                 <p>Shipping & taxes calculated at checkout</p>
-                <button id={shoppingStyles.checkoutBtn}>Checkout <CircleRoundedIcon sx={{ fontSize: 10 }}/>  ${totalCost}</button>
+                <Link exact to='checkout'>
+                    <button id={shoppingStyles.checkoutBtn}>
+                        Checkout <CircleRoundedIcon sx={{ fontSize: 10 }}/>  
+                        ${totalCost}
+                    </button>
+                </Link>
             </div>
         </div>
     )
