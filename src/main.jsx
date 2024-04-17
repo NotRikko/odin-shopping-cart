@@ -3,16 +3,21 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
 import ProductPage from './Components/ProductPage/ProductPage.jsx'
+import ProductInfo from './Components/ProductPage/ProductInfo.jsx'
 import './index.css'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />
   },
   {
-    path: "products",
-    element: <ProductPage />,
+    path: '/products',
+    element: <ProductPage />, 
+  },
+  {
+    path: '/products/:productID',
+    element: <ProductPage />, 
   }
 ])
 
