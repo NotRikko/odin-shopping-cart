@@ -1,6 +1,7 @@
 import Overlay from '../Common/Overlay'
 import {useState} from 'react'
 import ProductsStyle from './Products.module.css'
+import {useCart} from '../../CartProvider'
 
 function ProductInfo({product}) {
     const [amount, setAmount] = useState(1);
@@ -16,6 +17,8 @@ function ProductInfo({product}) {
     const handleAmountBtnDec = () => {
         setAmount(amount-1);
     }
+
+    const {addCartItem} = useCart();
    
     return (
         <>
@@ -35,7 +38,7 @@ function ProductInfo({product}) {
                             <input type="text" value={amount} onChange={handleAmount}/>
                             <button onClick={handleAmountBtnInc}></button>
                         </div>
-                        <button>Add to cart</button>
+                        <button onClick ={() => addCartItem(product, amount)}>Add to cart</button>
                     </div>
                 </div>
             </div>
