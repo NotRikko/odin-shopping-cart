@@ -1,4 +1,7 @@
 import {NavLink} from 'react-router-dom'
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import HomeIcon from '@mui/icons-material/Home';
+import StoreIcon from '@mui/icons-material/Store';
 import './NavBar.css'
 
 function NavBar() {
@@ -7,13 +10,13 @@ function NavBar() {
             <h3>Umbral</h3>
             <ul>
                 <li>
-                 <NavLink>Home</NavLink>
+                 <NavLink exact to='/'><HomeIcon/></NavLink>
                 </li>
                 <li>
-                 <NavLink>Products</NavLink>
+                 <NavLink exact to='/products'><StoreIcon/></NavLink>
                 </li>
                 <li>
-                 <NavLink>Cart</NavLink>
+                 <NavLink><ShoppingBagIcon/></NavLink>
                 </li>
             </ul>
         </nav>

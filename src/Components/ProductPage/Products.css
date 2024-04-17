@@ -1,0 +1,42 @@
+#productPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#productPage h1 {
+    color: black;
+    margin-top: 100px;
+
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+    margin: 40px 100px 40px;
+}
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+    margin: auto;
+}
+
+
+.productCard img {
+    height: 190px;
+    width: 190px;
+    border: 1px solid black;
+}
+
+.productCard h3 {
+    align-self: flex-start;
+    height: 36px;
+    font-weight: 200;
+    margin-top: 10px;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: clip;
+}

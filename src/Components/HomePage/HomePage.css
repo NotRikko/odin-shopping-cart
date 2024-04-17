@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+
 #homePage {
     display: flex;
     flex-direction: column;
@@ -14,11 +16,23 @@
 }
 
 #homePage h1 {
+    font-family: "Sawarabi Minco", serif;
+    font-weight: 400;
     font-size: 4.2rem;
     margin-top: 30vh;
     margin-bottom: 10px;
 }
 
+#homePage h2 {
+    font-weight: 400;
+
+}
+
 #homePage button {
+    width: 120px;
+    font-family: "Sawarabi Minco", serif;
+    font-size: 0.9rem ;
+    font-weight: 600;
+    margin-top: 10px;
     padding: 12px;
 }
